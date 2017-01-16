@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>嘿嘿</title>
+</head>
+<body>
+	<h1>嘿嘿1111,TH</h1>
+	<!--download:下载属性  -->
+	<div><a download href="file/jieye.zip">这是a标签下载</a></div>
+	<br/>
+	<div><button name="dowloadBtn" onclick="dowload()">这是按钮下载</button></div>
+	<script type="text/javascript">
+	   function dowload(){
+		   console.info("按钮下载");
+		   var aLink=document.createElement("a");
+		   //var url="http://localhost:8080/test-basis-web/file/redis.conf";
+		   //var url="http://localhost:8080/test-basis-web/file/111.jpg";
+		   var url="http://localhost:8080/test-basis-web/file/jieye.zip";
+		   console.info("url:"+url);
+		   var blob=new Blob([url]);
+		   var evt=document.createEvent("HTMLEvents");
+		   evt.initEvent("click",false,false);
+		   //aLink.href=URL.createObjectURL(blob);
+		   aLink.href=url;
+		   //触发事件
+		   aLink.dispatchEvent(evt);
+	   }
+	</script>
+</body>
+</html>
